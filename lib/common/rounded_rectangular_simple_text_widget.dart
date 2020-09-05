@@ -12,7 +12,7 @@ class RoundedRectangularSimpleTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-        color: Colors.lime,
+        color: Colors.indigo,
         splashColor: Colors.black12,
         padding: EdgeInsets.all(0.0),
         shape: RoundedRectangleBorder(
@@ -25,8 +25,11 @@ class RoundedRectangularSimpleTextWidget extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25.0),
           ),
-          child:
-              Center(child: MultiSmallWidgets().titleWidget(dataText: title)),
+          child: Center(
+              child: MultiSmallWidgets().titleWidget(
+            dataText: title,
+            dataColor: Colors.white,
+          )),
         ));
   }
 }

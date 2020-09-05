@@ -41,7 +41,7 @@ class RoundedRectangularButton extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.0),
               border: Border.all(
-                color: Colors.lime,
+                color: Colors.indigo,
               )),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -64,7 +64,7 @@ class RoundedRectangularButton extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(5, 10, 10, 10),
                 decoration: BoxDecoration(
                     border: Border.all(
-                  color: Colors.lime[900],
+                  color: Colors.indigo[900],
                   width: 1.0,
                 )),
                 height: 60,
@@ -95,7 +95,7 @@ class RoundedRectangularButton extends StatelessWidget {
                 height: 80,
                 child: Icon(
                   Icons.arrow_forward_ios,
-                  color: Colors.lime[900],
+                  color: Colors.indigo[900],
                 ),
               ),
             ],

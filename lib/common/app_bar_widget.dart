@@ -18,7 +18,8 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       leading: InkWell(
           onTap: () {
-            StoreProvider.of<AppState>(context).dispatch(NavigatePopAction());
+//            StoreProvider.of<AppState>(context).dispatch(NavigatePopAction());
+            Navigator.of(context).pop();
           },
           child: Icon(
             Icons.arrow_back_ios,

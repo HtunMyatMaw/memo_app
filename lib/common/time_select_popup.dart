@@ -71,7 +71,7 @@ class _TimeSelectPopUpState extends State<TimeSelectPopUp> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           border: Border.all(
-            color: Colors.lime,
+            color: Colors.indigo,
           ),
           color: widget.openLock ? Colors.white : Colors.grey,
         ),
@@ -172,7 +172,7 @@ class _TimeSelectPopUpState extends State<TimeSelectPopUp> {
                             squeeze: 0.8,
                             children: hourList.map((hour) {
                               return Container(
-                                  color: Colors.lime,
+                                  color: Colors.indigo,
                                   height: 30,
                                   padding: EdgeInsets.only(right: 7.5),
                                   width:
@@ -212,7 +212,7 @@ class _TimeSelectPopUpState extends State<TimeSelectPopUp> {
                             squeeze: 0.8,
                             children: minuteList.map((minute) {
                               return Container(
-                                  color: Colors.lime,
+                                  color: Colors.indigo,
                                   height: 30,
                                   key: UniqueKey(),
                                   padding: EdgeInsets.only(left: 7.5),

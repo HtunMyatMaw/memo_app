@@ -1,20 +1,23 @@
-import 'package:choose_app/config/app_state.dart';
 import 'package:choose_app/model/task_data_model.dart';
-import 'package:choose_app/page/done/done_bloc.dart';
-import 'package:choose_app/page/done/done_list_item.dart';
+import 'package:choose_app/page/todo/all/todo_list_all_bloc.dart';
+import 'package:choose_app/page/todo/all/todo_list_all_item.dart';
+import 'package:choose_app/page/todo/todo_list_bloc.dart';
+import 'package:choose_app/page/todo/todo_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
-class DonePage extends StatelessWidget {
+class TodoListAllPage extends StatelessWidget {
+  final TodoListAllBloc bloc;
+
+  const TodoListAllPage({Key key, this.bloc}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    DoneBloc bloc = DoneBloc(StoreProvider.of<AppState>(context));
-
     return StreamBuilder<int>(
       initialData: 0,
-      stream: bloc.taskProgressChangeStream,
+      stream: bloc.newTaskCreatedResponseStream,
       builder: (context, snapshot) {
-        loadTask(bloc);
+        bloc.getAllTodoList();
 
         return Container(
           key: UniqueKey(),
@@ -27,7 +30,7 @@ class DonePage extends StatelessWidget {
                 return ListView.builder(
                   addAutomaticKeepAlives: false,
                   itemBuilder: (builder, index) {
-                    return DoneListItem(
+                    return TodoListAllItem(
                       itemModel: list[index],
                       bloc: bloc,
                     );
@@ -43,9 +46,5 @@ class DonePage extends StatelessWidget {
         );
       },
     );
-  }
-
-  void loadTask(DoneBloc bloc) {
-    bloc.getDoneTaskList();
   }
 }

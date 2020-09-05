@@ -6,10 +6,11 @@ class NavigateReplaceAction {
 
 class NavigatePushAction {
   final String routeName;
-
-  NavigatePushAction(this.routeName);
+  final Object argument;
+  NavigatePushAction(this.routeName, {this.argument});
 }
 
 class NavigatePopAction {
-  NavigatePopAction();
+  final Object returnData;
+  NavigatePopAction({this.returnData});
 }
